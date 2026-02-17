@@ -33,6 +33,10 @@
       max-width: 400px;
       margin: 0 auto;
     }
+    .max-w-600 {
+      max-width: 600px;
+      margin: 0 auto;
+    }
     .w-32 {
       width: 8rem;
     }

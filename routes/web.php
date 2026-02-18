@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SuggestionsController;
-use App\Models\suggestions;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contact-list', [ContactController::class, 'show'])->name('contact.show');
 Route::view('/services', 'services', [
     // 'services' => ['Web Development', 'Mobile App Development', 'UI/UX Design'],
     'services' => [],

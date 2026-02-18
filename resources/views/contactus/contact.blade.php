@@ -1,5 +1,6 @@
 <x-layout title="Contact Us">
   <h1 class="mt-2 text-5xl tracking-tight sm:text-4xl text-pretty">Contact Us</h1>
+  <div class="mb-4 text-right"><a href="{{ route('contact.show') }}" class="text-gray-600 hover:underline">View Submitted Messages</a></div>
   <x-card id="contact-card" class="max-w-600">
     @if (session('success'))
       <p class="mb-4 text-sm text-green-600">{{ session('success') }}</p>
@@ -15,7 +16,7 @@
               <label for="first_name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
               <div class="mt-2">
                 <input type="text" id="first_name" name="first_name" value="{{ old('first_name') }}" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2" />
               </div>
               @error('first_name')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -25,7 +26,7 @@
               <label for="last_name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
               <div class="mt-2">
                 <input type="text" id="last_name" name="last_name" value="{{ old('last_name') }}" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2" />
               </div>
               @error('last_name')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -35,7 +36,7 @@
               <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
               <div class="mt-2">
                 <input type="email" id="email" name="email" value="{{ old('email') }}" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2" />
               </div>
               @error('email')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -45,7 +46,7 @@
               <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone</label>
               <div class="mt-2">
                 <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2" />
               </div>
               @error('phone')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -55,7 +56,7 @@
               <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Message</label>
               <div class="mt-2">
                 <textarea id="message" name="message" rows="4" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">{{ old('message') }}</textarea>
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2">{{ old('message') }}</textarea>
               </div>
               @error('message')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

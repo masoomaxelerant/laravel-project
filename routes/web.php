@@ -3,8 +3,10 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SuggestionsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BMICalConroller;
 
-Route::view('/', 'welcome');
+Route::get('/', [BMICalConroller::class, 'index'])->name('bmi-home');
+Route::post('/calculate', [BMICalConroller::class, 'calculate'])->name('calculate');
 Route::view('/about', 'about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

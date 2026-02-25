@@ -76,7 +76,7 @@
     <a href="/services">Services</a>
     <a href="/suggestion">Suggestion</a>
   </nav>
-  <main>
+  <main class="max-w-screen-2xl m-auto p-6 bg-white rounded-lg shadow">
     {{ $slot }}
   </main>
 </body>

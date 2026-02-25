@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Suggestions;
 use Illuminate\Http\Request;
+use App\Http\Requests\SuggestionsRequest;
 
 class SuggestionsController extends Controller
 {
@@ -30,8 +31,11 @@ class SuggestionsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SuggestionsRequest $request)
     {
+        // $request->validate([
+        //     'suggestion' => 'required|min:10|max:255',
+        // ]);
         suggestions::create([
             'suggestion' => request('suggestion'),
             'user_id' => null,
@@ -66,10 +70,10 @@ class SuggestionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Suggestions $suggestions)
+    public function update(SuggestionsRequest $request, Suggestions $suggestions)
     {
         $suggestions->update([
-            'suggestion' => request('suggestion'),
+            'suggestion' => $request->input('suggestion'),
             'updated_at' => now(),
         ]);
 

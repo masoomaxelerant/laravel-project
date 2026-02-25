@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CalculateBMIRequest;
 
 class BMICalConroller extends Controller
 {
@@ -11,15 +11,8 @@ class BMICalConroller extends Controller
         return view('home');
     }
 
-    public function calculate(Request $request)
+    public function calculate(CalculateBMIRequest $request)
     {
-        $request->validate([
-          'age' => 'required|numeric|min:18|max:99',
-          'height' => 'required|numeric|min:100|max:250',
-          'weight' => 'required|numeric|min:30|max:200',
-          'gender' => 'required'
-        ]);
-
         $weight = $request->input('weight');
         $height = $request->input('height') / 100; // Convert cm to meters
 

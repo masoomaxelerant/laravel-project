@@ -17,6 +17,15 @@
           </div>
 
           <h3 class="text-lg font-semibold p-2">BMI Calculator</h3>
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="text-red-600">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
           <form action="{{ route('calculate') }}" class="p-4" method="POST">
             @csrf
             <div class="col-span-full space-y-6">
@@ -26,6 +35,7 @@
                 <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
                 <input type="text" id="age" name="age" value="{{ old('age') }}" placeholder="Enter your age between 18 and 99"
                   class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+                <x-form.error name="age" />
               </div>
 
               <!-- Gender -->
@@ -44,6 +54,7 @@
                       class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500" {{ old('gender') === 'female' ? 'checked' : '' }} />
                     <span class="ml-2 text-sm text-gray-700">Female</span>
                   </label>
+                  <x-form.error name="gender" />
                 </div>
               </div>
 
@@ -52,6 +63,7 @@
                 <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
                 <input type="text" id="height" name="height" value="{{ old('height') }}" placeholder="Enter your height between 100 and 250 cm"
                   class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+                <x-form.error name="height" />
               </div>
 
               <!-- Weight -->
@@ -59,6 +71,7 @@
                 <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
                 <input type="text" id="weight" name="weight" value="{{ old('weight') }}" placeholder="Enter your weight between 30 and 200 kg"
                   class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+                <x-form.error name="weight" />
               </div>
 
               <!-- Submit -->
